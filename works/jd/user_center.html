@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>个人中心</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/user_center.css" />
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/user_center.js"></script>
+  <script type="text/javascript">
+  	$(function(){
+  		// 左侧导航切换
+	     $('#playlist li').click(function(){
+	        $(this).addClass('active').siblings().removeClass('active');
+	        $('#content .tabCon').eq($(this).index()).show().siblings().hide();
+	    });
+
+
+  		 /*
+            页面加载完毕时,向服务器端发送请求,得到当前用户的所有订单信息
+            * 使用Ajax方式提交异步请求
+              * 原生Ajax的实现
+              * jQuery中的Ajax方法 - 选择$.get()方法,数据格式为JSON
+          */
+         $.get("server.php",function(data){
+            /*
+              封装initOrderList()函数
+              * 作用 - 解析服务器端响应的JSON格式数据
+                       将解析后的数据写入到<table>表格中
+              * 该函数接收 2 个参数
+                * Elem - 表示页面中表格
+                * data - 服务器端响应的数据内容
+             */
+                initOrderList($("#orderList"),data);
+            },"json");
+
+
+  	})
+  </script>
+ </head>
+ <body>
+	<!-- 导航区 -->
+	<div id="nav_tab">
+		<div class="w">
+			<div class="logo">
+				<a href="index.html" id="e1"></a>
+				<a href="index.html" id="e2">我的京东</a>
+				<a href="index.html" id="e3">返回京东首页</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 内容区容器 -->
+	<div id="container">
+		<div class="w">
+			<!-- 左侧列表 -->
+			<div id="playlist">
+				<h2>我的京东</h2>
+				<ul>
+					<li class="active">我的订单</li>
+					<li>消费记录</li>
+					<li>幸运抽奖</li>
+				</ul>
+			</div>
+			
+			<!-- 右侧内容区 -->
+			<div id="content">
+				<!-- 订单列表 -->
+				<div id="orderContent" class="tabCon">
+					<table id="orderList" width="100%">
+						<tr>
+							<th width="50%">订单信息</th>
+							<th width="10%">收货人</th>
+							<th width="10%">订单金额</th>
+							<th width="10%">
+								<select id="orderTime">
+									<option value="1">最近三个月</option>
+									<option value="2">今年内</option>
+									<option value="3">2016年</option>
+									<option value="4">2015年</option>
+									<option value="5">2014年</option>
+									<option value="6">2014年以前</option>
+								</select>
+							</th>
+							<th width="10%">
+								<select id="orderStatus">
+									<option value="1">全部状态</option>
+									<option value="2">等待付款</option>
+									<option value="3">等待自提</option>
+									<option value="4">等待收货</option>
+									<option value="5">已完成</option>
+									<option value="6">已取消</option>
+								</select>
+							</th>
+							<th width="10%">操作</th>
+						</tr>
+						<!-- <tr class="trOrder">
+							<td colspan="6">
+								<span>订单编号: 9545709796</span>
+								<span><a href="http://mall.jd.com/index-119003.html" target="_blank">BROWNE FOX旗舰店</a></span>
+							</td>
+						</tr>
+						<tr class="trProd">
+							<td>
+								<div class="imgList">
+									<a href="9545709796" target="_blank">'+
+										<img src="images/user_center/prod1.jpg" width="50" height="50" title="【限量秒杀】男士时尚韩版腰带加宽针扣潮商务皮带azkz A款针扣咖啡色" />'+
+									</a>
+								</div>
+							</td>
+							<td>aaa</td>
+							<td>￥21.90<br/>在线支付</td>
+							<td>2017-5-30<br/>13:40:20</td>
+							<td>已完成</td>
+							<td>
+								<a href="{0}">查看</a>|<a href="{1}">删除</a><br/>
+								<a href="{2}">评价晒单</a><br/>
+								<a class="btn_buy_again" href="{3}">还要买</a>
+							</td>
+						</tr> -->
+					</table>
+				</div>
+				<div id="recordContent" class="tabCon">
+					<canvas id="recordCvs" width="600" height="400">
+						您的浏览器不支持canvas
+					</canvas>
+				</div>
+				<div id="lotteryContent" class="tabCon">
+					<canvas id="lotteryCvs" width="500" height="500"></canvas>
+					<input type="button" id="btnLottery" value="开始抽奖">
+				</div>
+			</div>		
+		</div>
+	</div>
+
+
+	<!-- 页面底部 -->
+  	<div id="footer">
+  		<div class="links clear">
+  			<a href="#"  target="_blank">关于我们</a><span class="links_split">|</span>
+  			<a href="#" target="_blank">联系我们</a><span class="links_split">|</span>
+  			<a href="#" target="_blank">人才招聘</a><span class="links_split">|</span>
+  			<a href="#" target="_blank">商家入驻</a><span class="links_split">|</span>
+  			<a href="#" target="_blank">广告服务</a><span class="links_split">|</span>
+  			<a href="#" target="_blank">手机京东</a><span class="links_split">|</span>
+  			<a href="#" target="_blank">友情链接</a><span class="links_split">|</span>
+  			<a href="#" target="_blank">销售联盟</a><span class="links_split">|</span>
+  			<a href="#" target="_blank">京东社区</a><span class="links_split">|</span>
+  			<a href="#" target="_blank">京东公益</a>
+  		</div>
+  		<div class="copyright">北京市公安局朝阳分局备案编号110105014669  |  京ICP证070359号  |  互联网药品信息服务资格证编号(京)-非经营性-2011-0034<br />
+			    <a href="#">音像制品经营许可证苏宿批005号 </a> |  出版物经营许可证编号新出发(苏)批字第N-012号  |  互联网出版许可证编号新出网证(京)字150号<br />
+			    <a href="#">网络文化经营许可证京网文[2011]0168-061号 </a> Copyright © 2004-2014 京东JD.com 版权所有 <br />
+                京东旗下网站：
+                <a href="#">English Site</a> <a href="#">拍拍网</a> <a href="#">网银在线</a>
+        </div>
+        <p class="authentication">
+            <a href=""><img src="images/jy.jpg" width="108" height="40" /></a>
+            <a href=""><img src="images/kx.jpg" width="108" height="40" /></a>
+            <a href=""><img src="images/cy.jpg" width="108" height="40" /></a>
+            <a href=""><img src="images/cx.jpg" width="108" height="40" /></a>
+        </p>
+  	</div>
+ </body>
+</html>

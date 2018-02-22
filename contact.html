@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vboy个人博客</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"></script>
+</head>
+<body>
+	<!-- header顶部 -->
+	<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="index.html" title="易卫波博客"><img src="images/logo.png"></a>
+				<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div id="menu" class="collapse navbar-collapse">
+				<ul class="navbar-nav nav">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="about.html">关于我</a></li>
+					<li><a href="knowledge.html">技术&知识</a></li>
+					<li><a href="work.html">作品</a></li>
+					<li><a href="contact.html">联系我</a></li>
+				</ul>
+				<form action="" class="navbar-form navbar-right"> 
+					<div class="input-group">
+						<input type="text" placeholder="输入关键字" class="form-control">
+						<span class="input-group-btn">
+							<button class="btn btn-primary">搜索</button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<!-- 联系我 -->
+	<section id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-2 wow fadeInLeft" data-duration="1s">
+					<div class="watermark">
+						<h2 class="page-title">Contact</h2>
+						<div class="marker">c</div>
+					</div>
+					<div class="address">
+						<div class=" address-grid clear">
+							<i class="glyphicon glyphicon-map-marker"></i>
+							<div class="address1">
+								<h3>地址：</h3>
+								<p>湖北省武汉市</p>
+							</div>
+						</div>
+						<div class=" address-grid clear">
+							<i class="glyphicon glyphicon-phone"></i>
+							<div class="address1">
+								<h3>手机号码：</h3>
+								<p>+08615070282025</p>
+							</div>
+						</div>
+						<div class=" address-grid clear">
+							<i class="glyphicon glyphicon-envelope"></i>
+							<div class="address1">
+								<h3>Email：</h3>
+								<p><a href="mailto:vboy925@163.com"> vboy925@163.com</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 contact-message wow fadeInRight" data-duration="1s">
+					<h3>您也可以发送消息给我：</h3>
+					<form>
+						<div>
+							<input type="text" value="" placeholder="姓名" class="user" name="user">
+							<div class="alert alert-info user_info" role="alert">
+								<p>请输入2-20位，由字母数字组成</p>
+							</div>
+							<div class="alert alert-danger user_error" role="alert">
+								<p>输入有误，请重新输入</p>
+							</div>
+							<div class="alert alert-success user_success" role="alert">
+								<p>输入成功</p>
+							</div>		
+						</div>
+						<div>
+							<input type="text" value="" placeholder="邮箱" class="email" name="email">
+							<div class="alert alert-info email_info" role="alert">
+								<p>请输入正确可用的邮箱</p>
+							</div>
+							<div class="alert alert-danger email_error" role="alert">
+								<p>输入有误，请重新输入</p>
+							</div>
+							<div class="alert alert-success email_success" role="alert">
+								<p>输入成功</p>
+							</div>
+						</div>
+						<div>
+							<input type="text" value="" placeholder="主题" class="theme" name="theme">
+							<div class="alert alert-info theme_info" role="alert">
+								<p>请输入2个字符以上</p>
+							</div>
+							<div class="alert alert-danger theme_error" role="alert">
+								<p>输入有误，请重新输入</p>
+							</div>
+							<div class="alert alert-success theme_success" role="alert">
+								<p>输入成功</p>
+							</div>	
+						</div>
+						<div>
+							<textarea placeholder="信息内容" name="content" class="content"></textarea>
+							<div class="alert alert-info content_info" role="alert">
+								<p>请输入2个字符以上</p>
+							</div>
+							<div class="alert alert-danger content_error" role="alert">
+								<p>输入有误，请重新输入</p>
+							</div>
+							<div class="alert alert-success content_success" role="alert">
+								<p>输入成功</p>
+							</div>	
+						</div>
+						<label class="send">
+							<input type="button" value="发送" class="btn btn-primary">
+						</label>
+						<div class="alert alert-success success" role="alert">
+							
+						</div>
+					</form>						
+				</div>
+			</div>
+			<div class="row wow fadeInUp" data-duration="1s">
+				<div class="col-md-12" id="map"></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- footer -->
+	<footer class="container-fluid text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>Copyright © 2010-2018&nbsp;www.running.com&nbsp;易卫波 All rights reserved</p>
+				</div>
+			</div>
+		</div>	
+	</footer>
+	<!-- 返回顶部 -->
+	<div id="back-top">
+		<a href="javascript:;">TOP</a>
+	</div>
+</body>
+</html>

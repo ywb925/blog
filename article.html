@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vboy个人博客</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+</head>
+<body>
+	<!-- header顶部 -->
+	<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="index.html" title="易卫波博客"><img src="images/logo.png"></a>
+				<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div id="menu" class="collapse navbar-collapse">
+				<ul class="navbar-nav nav">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="about.html">关于我</a></li>
+					<li><a href="knowledge.html">技术&知识</a></li>
+					<li><a href="work.html">作品</a></li>
+					<li><a href="contact.html">联系我</a></li>
+				</ul>
+				<form action="" class="navbar-form navbar-right"> 
+					<div class="input-group">
+						<input type="text" placeholder="输入关键字" class="form-control">
+						<span class="input-group-btn">
+							<button class="btn btn-primary">搜索</button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<!-- 作品展示 -->
+	<section class="article">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="text-center article_title">浅谈我对闭包的有关理解</h1>
+					<p class="text-right info">作者：<span class="author">admin</span class="time">2018.1.22</p>
+					<div class="article-content">
+						<p>简单来说：闭包就是一个函数嵌套另一个函数，里层函数可以访问外层函数里的变量。</p>
+						<p><strong>全局变量：</strong>在web页面中全局变量属于 window 对象。全局变量可应用于页面上的所有脚本。
+						举个例子：a是全局变量，所有函数都可以访问</p>
+						<div class="code">
+							<p>var a = 4;</p>
+							<p> function fun() {</p>
+							<p> return a * a;</p>	
+							<p>}</p>
+						</div> 
+						<p>
+							<strong>局部变量：</strong>
+							局部变量只能用于定义它函数内部。对于其他的函数是不可用的
+							举个例子：a是局部变量，函数外部不可访问。
+						</p>
+						<div class="code">
+							<p>function fun() {</p>
+							<p> var a = 4;</p>
+							<p> return a * a;</p>	
+							<p>}</p>
+						</div> 
+						<p>
+							如果想访问函数里面的变量，就得使用闭包
+						</p>
+						<div class="code">
+
+							<p>function wrap(){</p>
+							<p>var a=4;</p>
+							<p>function inner(){</p>
+							<p>alert(a);</p>
+							<p>}</p>
+							<p>return inner;</p>
+							<p>}</p>
+							<p>var fun=wrap(); //结果是inner函数</p>
+							<p>fun(); //执行了inner函数</p>
+							<p>alert(a); //可以访问到a</p>
+						</div>
+						<p><strong>闭包的本质：</strong>wrap是inner的父函数，而inner被赋给了一个全局变量，这导致inner始终在内存中，而inner的存在依赖于wrap，因此wrap也始终在内存中，不会在调用结束后，被垃圾回收机制回收。</p>
+						<p><strong>闭包的应用：</strong>多个元素的点击计数事件，代码如下：</p>
+						<div class="code">
+							<p>var add = (function () { //结果是里层函数</p>
+							<p>var counter = 0;</p>
+							<p>return function () {return </p><p>counter += 1;}</p>
+							<p>})(); //匿名函数自调用</p>
+							
+						</div>
+						<p>闭包的使用：<br>
+							1.由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包。<br>
+							2.闭包会在父函数外部，改变父函数内部变量的值。
+						</p>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</section>
+
+	<!-- footer -->
+	<footer class="container-fluid text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>Copyright © 2010-2018&nbsp;www.running.com&nbsp;易卫波 All rights reserved</p>
+				</div>
+			</div>
+		</div>	
+	</footer>
+	<!-- 返回顶部 -->
+	<div id="back-top">
+		<a href="javascript:;">TOP</a>
+	</div>
+</body>
+</html>

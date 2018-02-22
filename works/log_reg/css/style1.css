@@ -1,0 +1,300 @@
+body,ul,h1,h2,h3,p,ol,input,textarea,select,label,input{
+			margin: 0;
+			padding: 0;
+		}
+		li{list-style: none;}
+		a{text-decoration: none;}
+		/**{box-sizing:border-box;}*/
+		#box{width: 100%;height: 100%;}
+		/*.tab{height: 40px;margin-bottom: 10px;}
+		.tab li{float:left;background: #ccc;line-height: 40px;color:#fff;width: 60px;text-align: center;}
+		.tab li.active{background: #666;color:#fff;}*/
+		#login {
+			width:100%;
+			max-width:500px;
+			height: 400px;
+			margin:0 auto;
+			margin-top: 100px;
+			border:1px solid #ccc;
+			background:#f1f1f1;
+		}
+		#login h2,#reg h2{
+			padding:10px;
+			text-align:center;
+			height:40px;
+			line-height:40px;
+			font-size:18px;
+			letter-spacing:1px;
+			color:#666;
+			border-bottom:1px solid #ccc;
+		}
+		#login div.info {
+			padding:15px 0 5px 0;
+			text-align:center;
+			color:red;
+		}
+		#login div.user, #login div.pass {
+			font-size:14px;
+			color:#666;
+			padding:5px 0;
+			text-align:center;
+		}
+		#login input.text {
+			width:200px;
+			height:25px;
+			border:1px solid #ccc;
+			background:#fff;
+			font-size:14px;
+			padding: 6px;
+		}
+		#login .button {
+			text-align:center;
+			padding:15px 0;
+		}
+		#login input.log {
+			width:107px;
+			height:30px;
+			border:none;
+			cursor:pointer;
+			background:url(../img/login_button.png) no-repeat left;
+		}
+		#login .isReg,#reg .isLog{
+			font-size: 14px;
+			margin-top: 20px;
+			padding: 10px;
+			text-align: center;
+		}
+		#login .isReg a,#reg .isLog a{
+			color:#337ab7;
+		}
+
+
+		#reg {
+			width:100%;
+			max-width:600px;
+			height:620px;
+			margin:0 auto;
+			margin-top: 100px;
+			border:1px solid #ccc;
+			background:#f1f1f1;
+		}
+
+		#reg dl {
+			font-size:14px;
+			color:#666;
+			margin:20px;
+			padding:0 0 0 10px;
+			position:relative;
+		}
+		#reg dl dd {
+			height:30px;
+			padding:5px 0;
+		}
+		#reg dl dd input.text, #reg dl dd select {
+			width:200px;
+			height:25px;
+			border:1px solid #ccc;
+			background:#fff;
+			font-size:14px;
+			color:#666;
+			text-indent:6px;
+		}
+		#reg dl dd select {
+			width:202px;
+		}
+		#reg dl dd.birthday select {
+			width:70px;
+		}
+		#reg dl dd textarea {
+			padding: 6px;
+			width:360px;
+			height:100px;
+			background:#fff;
+			border:1px solid #ccc;
+		}
+		#reg dl dd.ps {
+			padding:10px 0 0 300px;
+		}
+		#reg dl dd.ps strong.num {
+			padding:0 2px;
+		}
+		#reg dl dd.over{
+			display: none;
+		}
+		#reg dl dd.ps span.clear {
+			color:#06f;
+			cursor:pointer;
+		}
+		#reg dl dd input.reg {
+			width:143px;
+			height:33px;
+			background:url(../img/reg.png) no-repeat left;
+			border:none;
+			cursor:pointer;
+		}
+		#reg dl dd span.info, #reg dl dd span.error, #reg dl dd span.succ {
+			display:block;
+			font-size:12px;
+			color:#333;
+			width:165px;
+			height:32px;
+			line-height:32px;
+			padding:0 0 0 35px;
+			position:absolute;
+			letter-spacing:1px;
+			display:none;
+		}
+		#reg dl dd span.info {
+			background:url(../img/reg_info.png) no-repeat;
+		}
+		#reg dl dd span.error {
+			background:url(../img/reg_error.png) no-repeat;
+		}
+		#reg dl dd span.succ {
+			height:14px;
+			line-height:14px;
+			background:url(../img/reg_succ.png) no-repeat;
+			padding:0 0 0 20px;
+			color:green;
+		}
+		#reg dl dd span.loading {
+			position:absolute;
+			top:10px;
+			left:310px;
+			font-size:12px;
+			background:url(../img/loading2.gif) no-repeat;
+			text-indent:22px;
+			padding:1px 0 0 0;
+			display:none;
+		}
+		#reg dl dd span.info_user {
+			height:43px;
+			line-height:18px;
+			padding-top:7px;
+			background:url(../img/reg_info2.png) no-repeat;
+			top:3px;
+			left:330px;
+		}
+		#reg dl dd span.error_user {
+			top:3px;
+			left:330px;
+		}
+		#reg dl dd span.succ_user {
+			top:12px;
+			left:330px;
+		}
+		#reg dl dd span.info_pass {
+			width:244px;
+			height:102px;
+			padding:4px 0 0 16px;
+			background:url(../img/reg_info3.png) no-repeat;
+			top:5px;
+			left:330px;
+			letter-spacing:0;
+		}
+		#reg dl dd span.info_pass p {
+			height:25px;
+			line-height:25px;
+			color:#666;
+		}
+		#reg dl dd span.info_pass p strong.s {
+			color:#ccc;
+		}
+		#reg dl dd span.error_pass {
+			top:43px;
+			left:330px;
+		}
+		#reg dl dd span.succ_pass {
+			top:52px;
+			left:330px;
+		}
+		#reg dl dd span.info_notpass {
+			top:83px;
+			left:330px;
+		}
+		#reg dl dd span.error_notpass {
+			top:83px;
+			left:330px;
+		}
+		#reg dl dd span.succ_notpass {
+			top:92px;
+			left:330px;
+		}
+		#reg dl dd span.info_ans {
+			top:163px;
+			left:330px;
+		}
+		#reg dl dd span.error_ans {
+			top:163px;
+			left:330px;
+		}
+		#reg dl dd span.succ_ans {
+			top:172px;
+			left:330px;
+		}
+		#reg dl dd span.info_email {
+			top:203px;
+			left:330px;
+		}
+		#reg dl dd span.error_email {
+			top:203px;
+			left:330px;
+		}
+		#reg dl dd span.succ_email {
+			top:212px;
+			left:330px;
+		}
+		#reg dl dd span.error_ques {
+			top:123px;
+			left:330px;
+		}
+		#reg dl dd span.error_birthday {
+			top:241px;
+			left:370px;
+		}
+		#reg dl dd ul.all_email {
+			width:180px;
+			height:130px;
+			background:#fff;
+			padding:5px 10px;
+			position:absolute;
+			top:233px;
+			left:124px;
+			border:1px solid #ccc;
+			display:none;
+		}
+		#reg dl dd ul.all_email li {
+			height:25px;
+			line-height:25px;
+			border-bottom:1px solid #e5edf2;
+			padding:0 5px;
+			cursor:pointer;
+		}
+
+		#loading,#success{
+			position: absolute;
+			left: 40%;
+			/*top: 300px*/
+			width: 200px;
+			height: 40px;
+			background: #aaa;
+			z-index:10000;
+			border-bottom:1px solid #666;
+			border-right:1px solid #666;
+			display: none;
+		}
+		#loading p,#success p{
+			height: 40px;
+			line-height: 40px;
+			text-align:center;
+			color:#fff;
+			font-size:14px;
+			text-indent: 50px;
+			font-weight: bold;
+		}
+		#loading p{
+			background: url(../img/loading3.gif) no-repeat 20px center;
+		}
+		#success p {
+			background:url(../img/success.gif) no-repeat 20px center;
+		}
